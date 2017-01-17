@@ -14,7 +14,7 @@ namespace CIP.API.Controllers
         [HttpGet("{search}", Name = "GetTodo")]
         public JsonResult GetIndvidualContactById(string id, int ssn, int phone, string first, string last)
         {
-            string currentUser = WindowsIdentity.GetCurrent().Name;
+            var currentUser = User.Identity.Name;
 
             var item = new CIPModel();
             if (id != null)
